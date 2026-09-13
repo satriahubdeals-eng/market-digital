@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Digital - Store & Services</title>
+    <!-- Tailwind CSS CDN & FontAwesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glow-card:hover {
+            box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-gray-100 min-h-screen flex flex-col selection:bg-blue-600 selection:text-white">
+
+    <!-- Ambient Glow Background -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-600/10 blur-[130px] rounded-full pointer-events-none -z-10"></div>
+    <div class="fixed bottom-0 right-10 w-[500px] h-[300px] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-gray-800/80 bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-blue-500/20">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div class="leading-tight">
+                    <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-blue-400 to-indigo-300 bg-clip-text text-transparent">MARKET DIGITAL</span>
+                    <span class="block text-[10px] text-gray-400 font-mono tracking-widest">OFFICIAL STORE</span>
+                </div>
+            </a>
+
+            <nav class="flex items-center gap-6 text-sm font-medium">
+                <a href="/" class="text-gray-400 hover:text-white transition">Home</a>
+                <a href="/market" class="text-blue-400 font-semibold flex items-center gap-1.5">
+                    <i class="fa-solid fa-store text-xs"></i> Market
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+        
+        <!-- Hero Title & Search Bar -->
+        <div class="mb-10 text-center max-w-2xl mx-auto">
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
+                Katalog Produk & Layanan
+            </h1>
+            <p class="text-gray-400 text-sm sm:text-base mb-6">
+                Pilih source code script, VPS, panel, dan berbagai kebutuhan digital otomatis dengan transaksi instan.
+            </p>
+
+            <!-- Search & Filters -->
+            <div class="relative max-w-xl mx-auto">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Cari script bot, hosting, API, template..." 
+                       class="w-full bg-gray-900/90 border border-gray-800 rounded-xl pl-11 pr-4 py-3 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition shadow-inner">
+            </div>
+
+            <!-- Category Pills -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs font-medium">
+                <button onclick="setCategory('all')" class="cat-btn active bg-blue-600 text-white px-4 py-1.5 rounded-full transition">Semua</button>
+                <button onclick="setCategory('bot')" class="cat-btn bg-gray-800/80 hover:bg-gray-800 text-gray-300 px-4 py-1.5 rounded-full transition">Script Bot</button>
+                <button onclick="setCategory('vps')" class="cat-btn bg-gray-800/80 hover:bg-gray-800 text-gray-300 px-4 py-1.5 rounded-full transition">VPS / Server</button>
+                <button onclick="setCategory('api')" class="cat-btn bg-gray-800/80 hover:bg-gray-800 text-gray-300 px-4 py-1.5 rounded-full transition">API & Layanan</button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Item 1 -->
+            <div class="product-item glow-card bg-[#111827]/70 border border-gray-800/90 rounded-2xl p-5 flex flex-col justify-between transition duration-300 hover:border-blue-500/40" data-category="bot" data-name="script whatsapp bot multi device qris">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                            Node.js Script
+                        </span>
+                        <span class="text-xs text-emerald-400 flex items-center gap-1 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Ready
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition">
+                        Script Bot WhatsApp Store MD
+                    </h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        Fitur pembayaran otomatis QRIS realtime, integrasi payment gateway, sistem topup, broadcast pesan, dan dashboard web admin.
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-1.5 border-t border-gray-800/60 pt-3 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400 text-[10px]"></i> Pairing Code / QR Auth</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400 text-[10px]"></i> Full Source Code No Enkripsi</li>
+                    </ul>
+                </div>
+                <div class="pt-3 border-t border-gray-800/60 flex items-center justify-between">
+                    <div>
+                        <span class="text-[10px] text-gray-500 block">Harga</span>
+                        <span class="text-lg font-extrabold text-blue-400">Rp 50.000</span>
+                    </div>
+                    <button onclick="orderProduct('Script Bot WhatsApp Store MD', 'Rp 50.000')" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-4 py-2 rounded-xl transition shadow-lg shadow-blue-600/20 flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-shopping"></i> Order Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="product-item glow-card bg-[#111827]/70 border border-gray-800/90 rounded-2xl p-5 flex flex-col justify-between transition duration-300 hover:border-indigo-500/40" data-category="vps" data-name="cloud vps server basic murah">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-md bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                            Hosting / VPS
+                        </span>
+                        <span class="text-xs text-emerald-400 flex items-center gap-1 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Ready
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">
+                        Cloud VPS 2GB RAM (Ubuntu)
+                    </h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        Server VPS performa tinggi cocok untuk deployment 24/7 web service, Node.js bot, Nginx proxy, PM2 daemon, dan database.
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-1.5 border-t border-gray-800/60 pt-3 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-[10px]"></i> 1 vCPU / 2GB RAM / 30GB NVMe</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-[10px]"></i> IP Publik Dedicated + Full Root</li>
+                    </ul>
+                </div>
+                <div class="pt-3 border-t border-gray-800/60 flex items-center justify-between">
+                    <div>
+                        <span class="text-[10px] text-gray-500 block">Harga</span>
+                        <span class="text-lg font-extrabold text-indigo-400">Rp 35.000<span class="text-xs text-gray-500 font-normal">/bln</span></span>
+                    </div>
+                    <button onclick="orderProduct('Cloud VPS 2GB RAM', 'Rp 35.000/bln')" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold px-4 py-2 rounded-xl transition shadow-lg shadow-indigo-600/20 flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-shopping"></i> Order Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="product-item glow-card bg-[#111827]/70 border border-gray-800/90 rounded-2xl p-5 flex flex-col justify-between transition duration-300 hover:border-emerald-500/40" data-category="api" data-name="rest api qris payment gateway otomatis">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                            Payment API
+                        </span>
+                        <span class="text-xs text-emerald-400 flex items-center gap-1 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Ready
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">
+                        API QRIS Instant Callback
+                    </h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        Integrasi API pembuatan QRIS dinamis dan notifikasi callback otomatis langsung ke webhook bot/web kamu.
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-1.5 border-t border-gray-800/60 pt-3 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Kecepatan notifikasi &lt; 2 detik</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Dokumentasi lengkap & SDK Node.js</li>
+                    </ul>
+                </div>
+                <div class="pt-3 border-t border-gray-800/60 flex items-center justify-between">
+                    <div>
+                        <span class="text-[10px] text-gray-500 block">Harga</span>
+                        <span class="text-lg font-extrabold text-emerald-400">Rp 20.000<span class="text-xs text-gray-500 font-normal">/bln</span></span>
+                    </div>
+                    <button onclick="orderProduct('API QRIS Instant Callback', 'Rp 20.000/bln')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-4 py-2 rounded-xl transition shadow-lg shadow-emerald-600/20 flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-shopping"></i> Order Now
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/60 py-6 text-center text-xs text-gray-500">
+        <p>&copy; 2026 Market Digital Store. All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        let currentCategory = 'all';
+
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-gray-800/80', 'text-gray-300');
+            });
+            event.target.classList.add('bg-blue-600', 'text-white');
+            event.target.classList.remove('bg-gray-800/80', 'text-gray-300');
+            filterProducts();
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.product-item');
+
+            items.forEach(item => {
+                const itemCat = item.getAttribute('data-category');
+                const itemName = item.getAttribute('data-name');
+                const matchesSearch = itemName.includes(query);
+                const matchesCat = (currentCategory === 'all' || itemCat === currentCategory);
+
+                if (matchesSearch && matchesCat) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function orderProduct(name, price) {
+            alert('Pesanan Dipilih:\n' + name + ' (' + price + ')\n\nHubungkan ke form pembayaran atau kontak WhatsApp/Admin.');
+        }
+    </script>
+</body>
+</html>
